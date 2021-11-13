@@ -1,0 +1,30 @@
+
+.card img{
+    padding: 2px;
+    height: 100px;
+    width: 100px;
+}
+.item{
+    padding: 5px;
+}
+
+.title{
+    padding: 10px;
+    border-bottom: 2px solid black;
+}
+
+.addnew-btn{
+    height: 100px;
+    width: 300px;
+    align-content: center;
+`   padding: 30px;
+}
+
+.addnew-btn a{
+    text-decoration: none;
+    color: grey;
+}
+
+.addnew-btn a:hover{
+    color: white;
+}

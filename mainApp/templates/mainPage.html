@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load static %}
+{%block content %}
+<div class="container">
+  <h1 class="title text-center">Watch List</h1>
+  <div class="text-center">
+    <a class="addnew-btn btn btn-outline-secondary" href="addnew">Add Movie
+      <br>
+      <i class="fa fa-plus fa-3x" aria-hidden="true"></i>
+    </a>
+  </div>
+  <div class="row flex-column">
+    {% for item in movies %} 
+        <div class="col-md-12 item">
+          <div class="card flex-row">
+            <img class="card-img-left" src="{{ item.img.url }}" alt="Card image cap">
+            <div class="card-body">
+              <h5 class="card-title">{{item.title}}</h5>
+              <p class="card-text">Dated Modified: {{item.dateAdded}}</p>
+              {% if item.description %}
+                <p class="card-text">Description: {{item.description}}</p>
+              {% endif %}
+              <a href="{% url 'update_movie' item.id %}" class="btn btn-outline-primary float-right">Update</a>
+              <a href="{% url 'delete_movie' item.id %}" class="btn btn-outline-danger float-right">Delete</a>
+              
+            </div>
+          </div>
+        </div>
+    {% endfor %}
+
+  </div>
+</div>
+    
+{% endblock %}
+
